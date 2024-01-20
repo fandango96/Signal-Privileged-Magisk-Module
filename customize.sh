@@ -142,34 +142,11 @@ fi
 }
 
 # install
-APP=Tasker
-PKG=net.dinglisch.android.taskerm
-NEW=5312
+APP=Signal
+PKG=org.thoughtcrime.securesms
+NEW=137305
 if [ "$BOOTMODE" == true ]; then
   CURRENT=`pm list packages --show-versioncode | grep $PKG | sed "s|package:$PKG versionCode:||g"`
   copy_odex
   install_apk
 fi
-
-# power save
-PKGS=`cat $MODPATH/package.txt`
-FILE=$MODPATH/system/etc/sysconfig/*
-if [ "`grep_prop power.save $OPTIONALS`" == 1 ]; then
-  ui_print "- $MODNAME will not be allowed in power save."
-  ui_print "  It may save your battery but decreasing $MODNAME performance."
-  for PKG in $PKGS; do
-    sed -i "s|<allow-in-power-save package=\"$PKG\"/>||g" $FILE
-    sed -i "s|<allow-in-power-save package=\"$PKG\" />||g" $FILE
-  done
-  ui_print " "
-fi
-
-
-
-
-
-
-
-
-
-

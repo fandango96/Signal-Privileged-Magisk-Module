@@ -46,8 +46,7 @@ FILE=$MODPATH/sepolicy.pfsd
 sepolicy_sh
 
 # list
-PKGS="`cat $MODPATH/package.txt`
-       net.dinglisch.android.taskerm:playcore_missing_splits_activity"
+PKGS="`cat $MODPATH/package.txt`"
 for PKG in $PKGS; do
   magisk --denylist rm $PKG 2>/dev/null
   magisk --sulist add $PKG 2>/dev/null

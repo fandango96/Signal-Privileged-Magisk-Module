@@ -1,8 +1,6 @@
-id=TaskerPrivileged
-name=Tasker Privileged
+id=SignalPrivileged
+name=Signal Privileged
 version=v2.13
 versionCode=23
-author=Rei Ryuki the Fixer
-description=Fixes some missing functionalities of Tasker app due to restrictions in newer Android API versions.
-
-
+author=fandango96
+description=Make Signal a privileged app.
